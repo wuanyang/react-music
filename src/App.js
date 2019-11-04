@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button } from 'antd-mobile';
+import './assets/test.less'
 function App () {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p className="btn">
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -19,7 +19,6 @@ function App () {
           Learn React
         </a>
       </header>
-      <Button type="primary">测试</Button>
     </div>
   );
 }
