@@ -1,0 +1,82 @@
+@import './const.less';
+
+// 页面
+#root, .page {
+  height: 100%;
+}
+
+// flex
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.r-center {
+  align-items: center;
+}
+.c-center {
+  justify-content: center;
+}
+.flex-1 {
+  flex: 1;
+}
+.g-t-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-active {
+  cursor: pointer;
+  color: #0093FF;
+}
+.disabled {
+  color: #888;
+  background: #f6f6f6;
+}
+.g-role {
+  margin-left: 15px;
+  margin-top: 6px;
+  height: 30px;
+  max-width: 110px;
+}
+.g-gray28 {
+  font-size: 28px;
+  color: @gray-color;
+}
+.g-gray24 {
+  font-size: 24px;
+  color: @gray-color;
+}
+.g-gray22 {
+  font-size: 22px;
+  color: @gray-color;
+}
+.g-right-img {
+  height: 24px;
+  width: 24px;
+  margin-right: 40px;
+}
+.table {
+  border-radius:4px 4px 0 0;
+  border:1px solid rgba(240,241,242,1);
+  border-bottom: none;
+}
+
+// 错误页面
+.err-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  color: aqua;
+}

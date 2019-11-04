@@ -1,0 +1,30 @@
+{
+  "id": "1491021",
+  "name": "react-music",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "音乐APP所需",
+  "glyphs": [
+    {
+      "icon_id": "3851336",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "5171682",
+      "name": "耳机",
+      "font_class": "icon-",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "6263344",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    }
+  ]
+}
