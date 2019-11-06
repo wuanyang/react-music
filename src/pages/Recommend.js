@@ -1,6 +1,18 @@
 import React, { PureComponent } from 'react'
 import { getBanner, getRecommendList } from '../api/Recommend.js'
 import Slider from 'react-slick'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
+@connect(
+  state => {
+    return { counter: state }
+  },
+  {
+    add: () => {
+      return { type: 'add' }
+    }
+  }
+)
 
 class Recommend extends PureComponent {
   constructor(props) {
@@ -33,6 +45,10 @@ class Recommend extends PureComponent {
     })
   }
 
+  toList (data) {
+    this.props.history.push('/music-list', { id: data.id })
+  }
+
   render () {
     const settings = {
       dots: false,
@@ -59,13 +75,15 @@ class Recommend extends PureComponent {
           </Slider>
         </div>
         <div className="recommend-content">
-          <div className="recommend-title">推荐歌曲</div>
+          <div className="recommend-title" onClick={this.props.add}>推荐歌曲{this.props.counter}</div>
           <div className="recommend-list">
             {
               this.state.musicList.map((item, index) => {
                 return (
                   <div key={index} className="recommend-list-item column">
-                    <img src={item.picUrl} alt="" />
+                    <div className="recommend-list-active">
+                      <img onClick={() => this.toList(item)} src={item.picUrl} alt="" />
+                    </div>
                     <span>{item.name}</span>
                   </div>
                 )
@@ -78,4 +96,4 @@ class Recommend extends PureComponent {
   }
 }
 
-export default Recommend
+export default withRouter(Recommend)

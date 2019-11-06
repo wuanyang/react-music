@@ -1,0 +1,48 @@
+.player {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  &-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-text {
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.play {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  animation: rotate 8s linear infinite;
+}
+
+.pause {
+  animation-play-state: paused;
+}
+
+.audio {
+  width: 150px;
+  height: 40px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -6,6 +6,13 @@
   "description": "音乐APP所需",
   "glyphs": [
     {
+      "icon_id": "2076319",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e8a3",
+      "unicode_decimal": 59555
+    },
+    {
       "icon_id": "3851336",
       "name": "菜单",
       "font_class": "caidan",
@@ -13,18 +20,25 @@
       "unicode_decimal": 58965
     },
     {
-      "icon_id": "5171682",
-      "name": "耳机",
-      "font_class": "icon-",
-      "unicode": "e614",
-      "unicode_decimal": 58900
-    },
-    {
       "icon_id": "6263344",
       "name": "搜索",
       "font_class": "sousuo",
       "unicode": "e66a",
       "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "8351808",
+      "name": "耳机",
+      "font_class": "erji",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "10997764",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e697",
+      "unicode_decimal": 59031
     }
   ]
 }

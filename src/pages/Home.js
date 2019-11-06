@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Header from '../components/Header/Header';
 import Recommend from './Recommend';
+import { withRouter } from 'react-router-dom';
 
 class Home extends PureComponent {
   constructor(props) {
@@ -21,4 +22,4 @@ class Home extends PureComponent {
   }
 }
 
-export default Home
+export default withRouter(Home)
