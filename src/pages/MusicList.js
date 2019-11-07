@@ -27,8 +27,8 @@ class MusicList extends PureComponent {
     })
   }
 
-  play (item) {
-    this.setState({ item })
+  play (index) {
+    this.setState({ index })
   }
 
   render () {
@@ -50,7 +50,7 @@ class MusicList extends PureComponent {
         </div>
         <div className="list-content">
           <div className="list-container">
-            <div className="list-content-top">
+            <div className="list-content-top" onClick={() => this.play(0)}>
               <i className="iconfont iconbofang"></i>
               <span className="ml10">播放全部</span>
               <span className="ft12">（共{this.state.list.length}首）</span>
@@ -59,7 +59,7 @@ class MusicList extends PureComponent {
               this.state.list.map((item, index) => {
                 let str = index < this.state.list.length - 1 ? 'list-content-item list-content-border' : 'list-content-item'
                 return (
-                  <div key={index} className={str} onClick={() => this.play(item)} >
+                  <div key={index} className={str} onClick={() => this.play(index)} >
                     <span className="ft16">{index + 1}</span>
                     <div className="column ml15">
                       <span>{item.name}</span>
@@ -71,7 +71,7 @@ class MusicList extends PureComponent {
             }
           </div>
         </div>
-        <Player info={this.state.item} />
+        <Player initIndex={this.state.index} />
       </div >
     )
   }
