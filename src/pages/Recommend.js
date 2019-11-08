@@ -8,8 +8,11 @@ import { withRouter } from 'react-router-dom';
     return { counter: state }
   },
   {
-    add: () => {
-      return { type: 'add' }
+    toIndex: (index) => {
+      return { type: 'index', index }
+    },
+    toList: (list) => {
+      return { type: 'list', list }
     }
   }
 )
@@ -46,7 +49,12 @@ class Recommend extends PureComponent {
   }
 
   toList (data) {
+    this.props.toIndex(0)
     this.props.history.push('/music-list', { id: data.id })
+  }
+
+  add () {
+    this.props.toIndex()
   }
 
   render () {
@@ -75,7 +83,7 @@ class Recommend extends PureComponent {
           </Slider>
         </div>
         <div className="recommend-content">
-          <div className="recommend-title" onClick={this.props.add}>推荐歌曲{this.props.counter}</div>
+          <div className="recommend-title" onClick={() => { this.add() }}>推荐歌曲</div>
           <div className="recommend-list">
             {
               this.state.musicList.map((item, index) => {

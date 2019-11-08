@@ -1,7 +1,21 @@
 import React, { PureComponent } from 'react'
 import { withRouter } from 'react-router-dom';
 import { getSetDetail } from '../api/PlayList.js'
-import Player from '../components/player/player.js';
+import { connect } from 'react-redux';
+
+@connect(
+  state => {
+    return { data: state }
+  },
+  {
+    toIndex: (i) => {
+      return { type: 'index', index: i }
+    },
+    toList: (i) => {
+      return { type: 'list', list: i }
+    }
+  }
+)
 class MusicList extends PureComponent {
   constructor(props) {
     super(props)
@@ -16,18 +30,19 @@ class MusicList extends PureComponent {
     this._getSetDetail()
   }
 
-  _getSetDetail () {
-    getSetDetail({ id: this.props.history.location.state.id }).then(res => {
-      const { name, id, coverImgUrl, playCount } = { ...res.data.playlist }
-      this.setState({
-        info: { name, id, coverImgUrl, playCount },
-        list: res.data.playlist.tracks,
-        item: {}
-      })
+  async _getSetDetail () {
+    let res = await getSetDetail({ id: this.props.history.location.state.id })
+    const { name, id, coverImgUrl, playCount } = { ...res.data.playlist }
+    this.setState({
+      info: { name, id, coverImgUrl, playCount },
+      list: res.data.playlist.tracks,
+      item: {}
     })
   }
 
   play (index) {
+    this.props.toIndex(index)
+    this.props.toList(this.state.list)
     this.setState({ index })
   }
 
@@ -71,8 +86,7 @@ class MusicList extends PureComponent {
             }
           </div>
         </div>
-        <Player initIndex={this.state.index} />
-      </div >
+      </div>
     )
   }
 }

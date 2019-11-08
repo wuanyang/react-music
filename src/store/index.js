@@ -1,10 +1,18 @@
 import { createStore } from 'redux'
-const counterReducer = (state = 0, action) => {
+
+const initState = {
+  index: undefined,
+  list: []
+}
+
+const counterReducer = (state = initState, action) => {
   switch (action.type) {
-    case 'add':
-      return state + 1
-    case 'minus':
-      return state - 1
+    case 'list':
+      state.list = action.list
+      return { ...state }
+    case 'index':
+      state.index = action.index
+      return { ...state }
     default:
       return state
   }

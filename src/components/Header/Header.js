@@ -26,6 +26,7 @@ class Header extends PureComponent {
     this.setState({
       code
     })
+    this.props.handleNav(code)
   }
 
   render () {
@@ -35,7 +36,7 @@ class Header extends PureComponent {
           <span>
             <i className="iconfont iconcaidan ft18"></i>
           </span>
-          <span>React-Music</span>
+          <span>Way-Music</span>
           <span>
             <i className="iconfont iconsousuo ft18"></i>
           </span>

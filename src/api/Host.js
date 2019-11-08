@@ -1,1 +1,1 @@
-export const HOST = 'http://localhost:3000'
+export const HOST = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'http://120.27.241.70:3000'
